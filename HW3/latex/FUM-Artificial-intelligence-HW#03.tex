@@ -1,0 +1,309 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{mathtools}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{xepersian}
+\usepackage{multirow}
+
+
+% ---------------------------
+%      Dark Theme Setup
+% ---------------------------
+\definecolor{CustomBackground}{HTML}{1C1C1C}  % Dark background
+\pagecolor{CustomBackground}
+\color{white}
+
+% ---------------------------
+%        Font Setup
+% ---------------------------
+\settextfont{Vazir.ttf}[
+    BoldFont = Vazir-Bold.ttf,
+    Path = fonts/
+]
+\setlatintextfont{Vazir.ttf}[
+    BoldFont = Vazir-Bold.ttf,
+    Path = fonts/
+]
+
+% ---------------------------
+%     Custom Adjustments
+% ---------------------------
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\thesection}{\arabic{section}}
+
+% User-defined commands for homework info (adjust as needed)
+\newcommand{\HomeworkNumber}{3}
+\newcommand{\HomeworkDeadline}{1404/08/03}
+\newcommand{\id}{\texttt{\detokenize{@Kian_CE}}}
+
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% ---------------------------------
+%           Front Page
+% ---------------------------------
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        % Bigger Logo
+        \includegraphics[scale=1.1]{assets/fum-logo.png}\\[1cm]
+
+        {\Huge \bfseries هوش مصنوعی پیشرفته}\\[0.5cm]
+        {\Large دانشگاه فردوسی مشهد}\\[0.3cm]
+        {\Large گروه مهندسی کامپیوتر}\\[0.5cm]
+        {\normalsize دکتر هراتی}\\[2cm]
+
+        {\Huge \bfseries تمرین \HomeworkNumber}\\[0.5cm]
+		{\Large مهلت تحویل: \HomeworkDeadline}\\[2.5cm]
+
+		\Large مسئول تمرین: \id
+    \end{center}
+\end{titlepage}
+
+% ---------------------------------
+%          Instructions
+% ---------------------------------
+\clearpage
+\section*{دستورالعمل‌ها}
+
+دانشجویان محترم لطفا به موارد زیر توجه فرمایید:
+\begin{itemize}
+\itemsep0em
+\item
+	تحويل تمرين‌ها فقط از طريق سامانه  آموزش مجازی دانشگاه امکان‌‌پذیر است.
+\item 
+	تمرین‌ها باید دست نویس، خوانا و با استفاده از خودکار آبی یا مشکی و یا به صورت دیجیتالی با استفاده از قلم نوری نوشته شوند. 
+\item
+از تمرین‌های حل شده دیگران و هوش مصنوعی استفاده نکنید. پیامد‌های این کار با دانشجو می‌باشد. 
+\item
+	نوشتن جواب آخر به تنهايى نمره‌ای نداشته و تمام مراحل حل، مشمول نمره می‌باشد.
+\item 
+	به دلیل موعد از پیش تعیین شده تمرین‌ها و برنامه درسی، امکان تمدید تمرین وجود ندارد. همچنین بدیهی است که ارسال تمرین پس از موعد تعیین شده نمره‌ای نخواهد داشت.
+	
+\item نحوه نام‌گذاری فایل پاسخ باید مطابق جدول ~\ref{tab:file_format}
+و به شکل pdf باشد.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Format} & \texttt{StudentID-FullName-\#HwNo.pdf} \\
+		\hline
+		\textbf{Example} & \texttt{9876543210-Alan\_Turing-\#01.pdf} \\
+		\hline
+	\end{tabular}
+	\caption{شیوه نام‌گذاری فایل‌ها}
+	\label{tab:file_format}
+\end{table}
+    
+    
+\end{itemize}
+\rule{\linewidth}{0.4pt}
+
+
+%  هر سوال که گذاشته میشه، حما 3 خط آخر رو هم بعد از اتمام نوشتن سوال بگذارید.
+% \bigskip
+% \bigskip
+% \hline
+
+
+\section{سوال اول}
+هر کدام از الگوریتم‌های جست‌وجوی محلی زیر معادل کدام‌یک از الگوریتم‌های جست‌وجوی کلاسیک است؟ دلیل خود را توضیح دهید.
+
+\begin{enumerate}
+  \item[(آ)] الگوریتم ژنتیک با اندازه‌ی جمعیت $N = 1$
+  \item[(ب)] الگوریتم \lr{Local Beam Search} با یک حالت اولیه و بدون محدودیت در تعداد حالات یادگیری
+  \item[(ج)] الگوریتم \lr{Simulated Annealing} با دمای صفر در هر زمان
+  \item[(د)] الگوریتم \lr{Local Beam Search} با مقدار $K = 1$
+\end{enumerate}
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سوال دوم}
+
+\noindent\textbf{(آ)} درستی یا نادرستی هر یک از عبارات زیر را مشخص کرده و دلیل خود را توضیح دهید.
+
+\begin{itemize}
+  \item می‌توان انتظار داشت نتیجه‌ی اجرای جستجوی \lr{Local Beam} با پارامتر $k = 8$ تفاوت چندانی با نتیجه‌ی اجرای موازی الگوریتم \lr{Hill Climbing} نداشته باشد.
+  
+  \item با کاهش دما، عملکرد الگوریتم \lr{Simulated Annealing} به عملکرد حالت خاصی از الگوریتم \lr{Local Beam Search} با $K=1$ نزدیک می‌شود.
+  
+  \item استفاده از الگوریتم تپه‌نوردی با تابع $f(s) = h^{*}(s)$ دستیابی به هدف بهینه را تضمین می‌کند.
+  
+  \item اگر یک مسئلهٔ جستجوی محدود داشته باشیم به‌صورتی که ضریب انشعاب تمام حالات آن برابر ۱ باشد،
+  الگوریتم تپه‌نوردی حتماً هدف را در صورت وجود پیدا می‌کند.
+\end{itemize}
+
+\bigskip
+
+\noindent\textbf{(ب)} اگر در الگوریتم \lr{Simulated Annealing} به جای انتخاب یک فرزند بدتر به احتمال 
+$e^{-\frac{\Delta E}{T}}$
+که در آن $\Delta E$ تفاوت ارزش فرزند و حالت کنونی و $T$ دما است،
+از یک تابع مستقل از $\Delta E$ مثل $e^{-\frac{1}{T}}$ استفاده کنیم،
+و دما را مثل قبل کاهش دهیم، عملکرد الگوریتم بهتر می‌شود یا بدتر؟ با ذکر دلیل توضیح دهید.
+\bigskip
+
+\rule{\linewidth}{0.4pt}
+
+
+\section{سوال سوم}
+
+\noindent آیا می‌توان مسئلهٔ \lr{Local Search} را به کمک \lr{Bidirectional Search} (جست‌وجوی دوطرفه) حل کرد؟ چرا؟
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سوال چهارم}
+
+
+در این سؤال یک دور الگوریتم ژنتیک را بر روی ورودی‌های داده شده اعمال می‌کنیم.
+ورودی‌های ما رشته‌هایی از بیت‌های ۰ و ۱ هستند و تابع \lr{fitness} به صورت زیر تعریف می‌شود:
+
+\[
+f(v_0v_1v_2v_3v_4v_5) = \sum_{i=0}^{5} v_i + AND(v_0, v_1) + OR(v_2, v_3) + XOR(v_4, v_5)
+\]
+
+(خروجی‌های توابع منطقی به صورت صفر و یک است.)
+
+\bigskip
+
+\noindent\textbf{(الف)} در این قسمت ابتدا مقدار \lr{fitness} چهار نمونهٔ زیر را به‌دست آورده و سپس احتمال انتخاب آن‌ها را در دور بعد به‌دست آورده و دو موردی که بیشترین احتمال را دارند، انتخاب کنید.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{نمونه} & \textbf{fitness} & \textbf{احتمال انتخاب شدن} \\
+\hline
+1 1 0 1 0 0 & & \\
+\hline
+0 1 1 1 0 1 & & \\
+\hline
+1 1 0 1 1 1 & & \\
+\hline
+1 1 0 0 1 1 & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\bigskip
+
+\noindent\textbf{(ب)} حال عمل \lr{crossover} را بر روی دو نمونهٔ منتخب بالا اجرا می‌کنیم.
+نقطهٔ انجام \lr{crossover} را بین بیت دوم و سوم فرض کنید و جدول زیر را کامل کنید.
+(دقت کنید سطر اول نمونه با بیشترین احتمال انتخاب و سطر بعد نمونه با دومین احتمال انتخاب بالا است و همچنین قسمت راست بین سطرها جابه‌جا می‌شود.)
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{قبل از \lr{crossover}} & \textbf{بعد از \lr{crossover}} \\
+\hline
+ &  \\
+\hline
+ &  \\
+\hline
+\end{tabular}
+\end{table}
+
+\bigskip
+
+\noindent\textbf{(ج)} حال نوبت \lr{mutation} است. فرض کنید احتمال \lr{mutation} برابر ۰٫۱ است و اعداد تصادفی زیر برای اندیس و احتمال \lr{mutation} به‌دست آمده است. با توجه به این اعداد جدول زیر را کامل کنید.
+(دقت کنید که ترتیب سطرها مانند نتیجهٔ قسمت (ب) است.)
+
+\begin{itemize}
+  \item نمونهٔ اول: احتمال ۰٫۰۵، اندیس: ۳ و نمونهٔ دوم: احتمال ۰٫۱۵، اندیس: ۴
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{قبل از \lr{mutation}} & \textbf{بعد از \lr{mutation}} \\
+\hline
+ &  \\
+\hline
+ &  \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section{سوال پنجم}
+
+در یک گراف، به دوری که در آن همه‌ی رأس‌های گراف دقیقاً یک‌بار دیده شوند، دور همیلتونی می‌گویند.
+مسئله‌ی پیدا کردن دور همیلتونی در حالت کلی \lr{NP-Complete} است اما می‌خواهیم به کمک الگوریتم ژنتیک راه‌حلی برای آن ارائه دهیم.
+
+\bigskip
+
+\noindent\textbf{(آ)} رشته‌های \lr{DNA} و تابع سازگاری (\lr{fitness}) را تعریف کنید.
+مقدار تابع سازگاری برای زمانی که به رشته‌ی هدف (دور همیلتونی) رسیده باشیم چقدر است؟
+
+\bigskip
+
+\noindent\textbf{(ب)} هرکدام از مراحل \lr{selection}، \lr{cross-over}، \lr{mutation} را برای این مسئله و همچنین تعبیر گرافی آن را توضیح دهید.
+
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سوال ششم}
+
+\noindent\textbf{(آ)} جدول زیر نمایانگر شش حالت ممکن از الگوریتم \lr{Simulated Annealing} است.  
+سعی کنید برای هر حالت، احتمال قبول شدن حرکت به سمت حالت همسایه را به‌دست آورید.  
+فرض کنید که تابع شما باید کمینه شود.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{دما} & \textbf{حالت همسایه} & \textbf{حالت فعلی} \\
+\hline
+۲۵ & ۶۵ & ۷۵ \\
+\hline
+۲۵ & ۵۵ & ۷۵ \\
+\hline
+۵۰ & ۶۵ & ۷۵ \\
+\hline
+۵۰ & ۵۵ & ۷۵ \\
+\hline
+۲۵ & ۷۵ & ۶۵ \\
+\hline
+۵۰ & ۷۵ & ۶۵ \\
+\hline
+\end{tabular}
+\caption{محاسبهٔ احتمال پذیرش حرکت برای شش حالت الگوریتم}
+\end{table}
+
+فرمولی را که برای محاسبه استفاده کردید شرح دهید و پارامترهای آن را معرفی کنید.
+
+\bigskip
+    
+\noindent\textbf{(ب)} به نظر شما چه ایده‌ای پشت ابتدای ابداع و استفاده از الگوریتم \lr{Simulated Annealing} است؟
+
+\bigskip
+
+\noindent\textbf{(ج)} با توجه به این که یکی از پارامترهای اساسی در این الگوریتم دما است،  
+به سؤالات زیر پاسخ دهید:
+
+\begin{enumerate}
+  \item تأثیر دمای شروع بسیار بالا یا بسیار پایین روی عملکرد الگوریتم چیست؟
+  \item نحوهٔ تصمیم‌گیری روی دمای شروع مناسب به چه حالتی است؟
+  \item چگونه روی دمای نهایی تصمیم می‌گیریم؟
+\end{enumerate}
+
+\rule{\linewidth}{0.4pt}
+
+
+\end{document}

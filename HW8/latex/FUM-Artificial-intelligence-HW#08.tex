@@ -1,0 +1,265 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{mathtools}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{xepersian}
+\usepackage{multirow}
+
+
+% ---------------------------
+%      Dark Theme Setup
+% ---------------------------
+\definecolor{CustomBackground}{HTML}{1C1C1C}  % Dark background
+\pagecolor{CustomBackground}
+\color{white}
+
+% ---------------------------
+%        Font Setup
+% ---------------------------
+\settextfont{Vazir.ttf}[
+    BoldFont = Vazir-Bold.ttf,
+    Path = fonts/
+]
+\setlatintextfont{Vazir.ttf}[
+    BoldFont = Vazir-Bold.ttf,
+    Path = fonts/
+]
+
+% ---------------------------
+%     Custom Adjustments
+% ---------------------------
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\thesection}{\arabic{section}}
+
+% User-defined commands for homework info (adjust as needed)
+\newcommand{\HomeworkNumber}{8}
+\newcommand{\HomeworkDeadline}{1404/09/22}
+\newcommand{\id}{\texttt{\detokenize{@MhsaArl}}}
+
+
+
+
+\begin{document}
+
+% ---------------------------------
+%           Front Page
+% ---------------------------------
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        % Bigger Logo
+        \includegraphics[scale=1.1]{assets/fum-logo.png}\\[1cm]
+
+        {\Huge \bfseries مبانی و کاربردهای هوش مصنوعی}\\[0.5cm]
+        {\Large دانشگاه فردوسی مشهد}\\[0.3cm]
+        {\Large گروه مهندسی کامپیوتر}\\[0.5cm]
+        {\normalsize دکتر هراتی}\\[2cm]
+        
+
+		{\Huge \bfseries تمرین \HomeworkNumber}\\[0.5cm]
+		{\Large مهلت تحویل: \HomeworkDeadline}\\[2.5cm]
+		
+		\Large مسئول تمرین: \id
+
+    \end{center}
+\end{titlepage}
+
+% ---------------------------------
+%          Instructions
+% ---------------------------------
+\clearpage
+\section*{دستورالعمل‌ها}
+
+دانشجویان محترم لطفا به موارد زیر توجه فرمایید:
+\begin{itemize}
+\itemsep0em
+\item
+	تحويل تمرين‌ها فقط از طريق سامانه  آموزش مجازی دانشگاه امکان‌‌پذیر است.
+\item 
+	تمرین‌ها باید دست نویس، خوانا و با استفاده از خودکار آبی یا مشکی و یا به صورت دیجیتالی با استفاده از قلم نوری نوشته شوند. 
+\item
+از تمرین‌های حل شده دیگران و هوش مصنوعی استفاده نکنید. پیامد‌های این کار با دانشجو می‌باشد. 
+\item
+	نوشتن جواب آخر به تنهايى نمره‌ای نداشته و تمام مراحل حل، مشمول نمره می‌باشد.
+\item 
+	به دلیل موعد از پیش تعیین شده تمرین‌ها و برنامه درسی، امکان تمدید تمرین وجود ندارد. همچنین بدیهی است که ارسال تمرین پس از موعد تعیین شده نمره‌ای نخواهد داشت.
+	
+\item نحوه نام‌گذاری فایل پاسخ باید مطابق جدول ~\ref{tab:file_format}
+و به شکل pdf باشد.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Format} & \texttt{StudentID-FullName-\#HwNo.pdf} \\
+		\hline
+		\textbf{Example} & \texttt{9876543210-Alan\_Turing-\#01.pdf} \\
+		\hline
+	\end{tabular}
+	\caption{شیوه نام‌گذاری فایل‌ها}
+	\label{tab:file_format}
+\end{table}
+    
+    
+\end{itemize}
+\rule{\linewidth}{0.4pt}
+
+
+%  هر سوال که گذاشته میشه، حما 3 خط آخر رو هم بعد از اتمام نوشتن سوال بگذارید.
+% \bigskip
+% \bigskip
+% \hline
+\section{سوال اول}
+
+ الگوریتم \lr{Graphplan} را شرح دهید و برای یک گراف برنامه‌ریزی:
+
+\begin{enumerate}
+  \item[الف)]  روش های هیوریستیک را نام ببرید و آن‌ها توضیح دهید.
+  \item[ب)] چه زمانهایی امکان رخداد \lr{Mutex Relation} بین دو اکشن وجود دارد؟
+\end{enumerate}
+
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سوال دوم}
+
+گربه‌ای می‌خواهد لیوان شیشه‌ای که صاحبش روی یک قفسه گذاشته را به پایین بیندازد.  
+قفسه به قدری بلند است که نمی‌تواند به روی آن بپرد، اما دقیقاً زیر قفسه یک چهارپایه قرار دارد که می‌تواند به روی آن برود و هم‌سطح با قفسه شود.  
+در ابتدا، موقعیت گربه در A قرار دارد و موقعیت قفسه و چهارپایه نیز در B است.  
+گربه و چهارپایه هر دو ارتفاع پایین (Low) دارند، اما وقتی گربه به روی چهارپایه برود، ارتفاعش زیاد (High) می‌شود.  
+اعمالی که برای رسیدن به هدفش قادر به انجام آن است، همراه با پیش‌شرط‌ها و اثرات آن در ادامه آمده‌اند:
+
+\bigskip
+
+\bigskip
+
+\noindent\textbf{الف)} گراف برنامه‌ریزی (\lr{Planning Graph}) را برای این مسئله رسم کنید.  
+
+\bigskip
+
+\noindent\textbf{ب)}  
+هر ۳ موردی که منجر به \lr{Mutex Exclusion} در دو عمل 
+و هر ۲ موردی که منجر به این شرایط بین دو literal می‌شوند  
+را به اختصار توضیح دهید و برای هر پنج مورد یک نمونه \lr{Mutex Link} پیدا کنید. 
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سؤال سوم }
+
+\begin{itemize}
+
+\item
+الف) دو روش \lr{Forward State-Space Search} و \lr{Regression Search} را از نظر فضای جستجو، کارایی، ارتباط با هدف، ضریب انشعاب و میزان مرتبط‌بودن اعمال (\lr{Relevance}) به‌صورت کامل و تحلیلی مقایسه کنید.
+
+\item
+ب) برای مسئلهٔ \lr{Blocks World} مثالی ارائه دهید که در آن جستجوی \lr{Forward} دارای فضای حالت بسیار بزرگ است، اما جستجوی \lr{Regression} به‌صورت مستقیم و سریع به اعمال مرتبط با هدف می‌رسد.
+
+\item
+ج) مثالی ارائه کنید که در آن اجرای \lr{Regression Search} یا غیرممکن است یا بسیار دشوار می‌شود. دلیل دشوار شدن آن را تحلیل کنید.
+
+\item
+د) توضیح دهید چرا \lr{Regression Search} در مسائلی که \lr{Subgoal Interaction} شدید دارند، کارایی پایینی پیدا می‌کند و ممکن است حتی بدتر از \lr{Forward Search} عمل کند.
+
+\end{itemize}
+
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سؤال چهارم}
+
+الگوریتم \lr{Graphplan} را به‌صورت یک مسئلهٔ \lr{Constraint Satisfaction Problem (CSP)}
+فرموله کنید.  
+در این فرموله‌سازی، موارد زیر را به‌طور دقیق مشخص کنید:
+
+\begin{itemize}
+    \item تعریف کامل متغیرها (Variables)
+    \item دامنهٔ متغیرها (Domains)
+    \item قیود مربوط به \lr{Action Mutex}
+    \item قیود مربوط به \lr{Literal Mutex}
+    \item قیود مربوط به ارضای اهداف (\lr{Goal Satisfaction Constraints})
+\end{itemize}
+
+\noindent
+سپس توضیح دهید که چرا مدل‌سازی \lr{Graphplan} به‌صورت یک مسئلهٔ \lr{CSP}
+باعث افزایش چشمگیر سرعت الگوریتم می‌شود و چگونه 
+ساختار لایه‌ای (\lr{Leveled Structure}) و قیود \lr{Mutex}
+جستجو را به شدت محدود می‌کنند.
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سوال پنجم}
+
+در یک خانهٔ کوچک، یک ربات ‌خدمتکار وجود دارد. این خانه شامل دو اتاق با نام‌های
+\lr{Kitchen} و \lr{LivingRoom} است. در اتاق \lr{Kitchen} یک لیوان روی میز قرار دارد و
+در اتاق \lr{LivingRoom} یک دستمال وجود دارد. ربات می‌تواند بین اتاق‌ها حرکت کند،
+اشیاء را بردارد و زمین را تمیز کند.
+
+\bigskip
+
+\noindent
+\textbf{هدف ربات:}
+\begin{itemize}
+    \item انتقال لیوان از \lr{Kitchen} به \lr{LivingRoom}
+    \item تمیز شدن زمینِ اتاق \lr{LivingRoom}
+\end{itemize}
+
+\bigskip
+
+\noindent
+\textbf{موارد مورد انتظار:}
+
+\begin{enumerate}
+    \item مجموعهٔ گزاره‌ها (\lr{Predicates}) موردنیاز مسئله را خودتان تعریف کنید.
+    \item حالت اولیه (\lr{Initial State}) را مشخص کنید.
+    \item حالت هدف (\lr{Goal State}) را به صورت مجموعه‌ای از \lr{Literal}ها بنویسید.
+    \item اعمالی مانند \lr{Move}، \lr{PickUp}، \lr{PutDown} و \lr{CleanRoom} را همراه با
+    پیش‌شرط‌ها و اثرات (به سبک \lr{Add/Delete}) تعریف کنید.
+    \item سه سطح اول گراف برنامه‌ریزی را رسم کنید:
+    \[
+        S_0 \;\rightarrow\; A_0 \;\rightarrow\; S_1
+    \]
+    \item تمام رابطه‌های \lr{Mutex} موجود در سطح‌های \lr{$A_0$} و \lr{$S_1$} را مشخص کنید.
+    \item توضیح دهید آیا رسیدن به هدف در سطح \lr{$S_1$} امکان‌پذیر است یا نیاز به گسترش
+    سطح‌های بعدی وجود دارد.
+\end{enumerate}
+
+\bigskip
+
+\noindent
+\textbf{پیشنهاد (اختیاری):}
+\begin{itemize}
+    \item می‌توانید گزاره‌هایی مانند:
+    \begin{LTR}
+    At(robot, room), At(cup, room), Holding(cup), Clean(room)
+    \end{LTR}
+    را تعریف کنید.
+    
+    \item می‌توانید فرض کنید ربات تنها در صورتی می‌تواند شیئی را بردارد که دستش خالی باشد
+    و در همان اتاق قرار داشته باشد.
+    
+    \item برای عمل \lr{CleanRoom} می‌توانید فرض کنید ربات باید دستمال را در اختیار داشته باشد.
+    
+    \item برای ساده‌سازی، تنها \lr{Literal}های مثبت را در سطح‌های \lr{S} قرار دهید.
+    \item لطفا در صورت استفاده از گزاره و شرط های دیگر پاسخ خود را جهت درک بهتر توضیح دهید و فقط گزاره ها را ننویسید.
+\end{itemize}
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+
+
+
+\end{document}
