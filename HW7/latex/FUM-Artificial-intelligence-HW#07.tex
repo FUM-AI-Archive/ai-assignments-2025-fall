@@ -1,0 +1,318 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{mathtools}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{xepersian}
+\usepackage{multirow}
+
+
+% ---------------------------
+%      Dark Theme Setup
+% ---------------------------
+\definecolor{CustomBackground}{HTML}{1C1C1C}  % Dark background
+\pagecolor{CustomBackground}
+\color{white}
+
+% ---------------------------
+%        Font Setup
+% ---------------------------
+\settextfont{Vazir.ttf}[
+    BoldFont = Vazir-Bold.ttf,
+    Path = fonts/
+]
+\setlatintextfont{Vazir.ttf}[
+    BoldFont = Vazir-Bold.ttf,
+    Path = fonts/
+]
+
+% ---------------------------
+%     Custom Adjustments
+% ---------------------------
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\thesection}{\arabic{section}}
+
+% User-defined commands for homework info (adjust as needed)
+\newcommand{\HomeworkNumber}{7}
+\newcommand{\HomeworkDeadline}{1404/9/15}
+\newcommand{\id}{\texttt{\detokenize{@MhsaArl}}}
+
+
+
+
+\begin{document}
+
+% ---------------------------------
+%           Front Page
+% ---------------------------------
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        % Bigger Logo
+        \includegraphics[scale=1.1]{assets/fum-logo.png}\\[1cm]
+
+        {\Huge \bfseries مبانی و کاربردهای هوش مصنوعی}\\[0.5cm]
+        {\Large دانشگاه فردوسی مشهد}\\[0.3cm]
+        {\Large گروه مهندسی کامپیوتر}\\[0.5cm]
+        {\normalsize دکتر هراتی}\\[2cm]
+
+        {\Huge \bfseries تمرین \HomeworkNumber}\\[0.5cm]
+        {\Large مهلت تحویل: \HomeworkDeadline}\\[2.5cm]
+
+        \Large مسئول تمرین: \id
+    \end{center}
+\end{titlepage}
+
+% ---------------------------------
+%          Instructions
+% ---------------------------------
+\clearpage
+\section*{دستورالعمل‌ها}
+
+دانشجویان محترم لطفا به موارد زیر توجه فرمایید:
+\begin{itemize}
+\itemsep0em
+\item
+	تحويل تمرين‌ها فقط از طريق سامانه  آموزش مجازی دانشگاه امکان‌‌پذیر است.
+\item 
+	تمرین‌ها باید دست نویس، خوانا و با استفاده از خودکار آبی یا مشکی و یا به صورت دیجیتالی با استفاده از قلم نوری نوشته شوند. 
+\item
+از تمرین‌های حل شده دیگران و یا هوش مصنوعی استفاده نکنید. پیامد‌های این کار با دانشجو می‌باشد. 
+\item
+	نوشتن جواب آخر به تنهايى نمره‌ای نداشته و تمام مراحل حل، مشمول نمره می‌باشد.
+\item 
+	به دلیل موعد از پیش تعیین شده تمرین‌ها و برنامه درسی، امکان تمدید تمرین وجود ندارد. همچنین بدیهی است که ارسال تمرین پس از موعد تعیین شده نمره‌ای نخواهد داشت.
+	
+\item نحوه نام‌گذاری فایل پاسخ باید مطابق جدول 1
+و به شکل pdf باشد.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Format} & \texttt{StudentID-FullName-\#HwNo.pdf} \\
+		\hline
+		\textbf{Example} & \texttt{9876543210-Alan\_Turing-\#01.pdf} \\
+		\hline
+	\end{tabular}
+	\caption{شیوه نام‌گذاری فایل‌ها}
+	\label{tab:file_format}
+\end{table}
+    
+    
+\end{itemize}
+\rule{\linewidth}{0.4pt}
+
+
+%  هر سوال که گذاشته میشه، حما 3 خط آخر رو هم بعد از اتمام نوشتن سوال بگذارید.
+% \bigskip
+% \bigskip
+% \hline
+
+
+\section{سوال اول}
+
+برای تعیین قابل خوردن بودن یک گونه گیاه با توجه به حقایقی که در پایگاه دانش داریم، با رسم گراف AND-OR و مشخص کردن مسیر الگوریتم 
+Chaining Backward  
+با Unification\lr{،} مشخص کنید گیاهی که سبز است، برگ دارد و در نور رشد می‌کند قابل خوردن هست یا خیر.
+
+\begin{latin}
+\begin{enumerate}
+	\item $\forall x \; NotToxic(x) \Rightarrow Edible(x)$
+	\item $\forall x \; (HasLeaves(x) \land GoodScent(x)) \Rightarrow NotToxic(x)$
+	\item $\forall x \; (Green(x) \land GrowsInLight(x)) \Rightarrow GoodScent(x)$
+\end{enumerate}
+\end{latin}
+
+
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سوال دوم}
+
+
+در یک پرونده جنایی، با داده‌های بدست آمده از طرف یک کارآگاه می‌خواهیم مدلی طراحی کنیم که با استفاده از استنتاج زنجیره‌ای روبه‌عقب 
+Chaining) (Backward 
+ تعیین می‌کند که آیا John مظنون جنایت است یا خیر. گام‌های استنتاج را نشان دهید.
+
+
+\begin{latin}
+	\emph{facts}
+\begin{itemize}
+	\item \textbf{Fact 1:} $Witness1(Saw, John, CrimeScene)$
+	\item \textbf{Fact 2:} $Witness2(Saw, Jane, CrimeScene)$
+	\item \textbf{Fact 3:} $Witness2(Saw, John, CrimeScene)$
+	\item \textbf{Fact 4:} $Fingerprint(John, Gun), Motive(John, FinancialGain)$
+	\item \textbf{Fact 5:} $Motive(Jane, Revenge)$
+	\item \textbf{Fact 6:} $Weapon(Gun)$
+	\item \textbf{Fact 7:} $Time(Crime, Night)$
+\end{itemize}
+\end{latin}
+
+\begin{latin}
+	\emph{Rules}
+\begin{itemize}
+	\item \textbf{Rule A:} If $Witness1(Saw, X, CrimeScene)$ and $Witness2(Saw, X, CrimeScene)$ then
+	 
+	 $PresentAtCrimeScene(X)$.
+	\item \textbf{Rule B:} If $Fingerprint(X, Gun)$ and $Weapon(Gun)$, then $UsedWeapon(X, Gun)$.
+	\item \textbf{Rule C:} If $Motive(X, FinancialGain)$ then $HasMotive(X)$.
+	\item \textbf{Rule D:} If $Motive(X, Revenge)$ then $HasMotive(X)$.
+	\item \textbf{Rule E:} If $PresentAtCrimeScene(X)$ and $UsedWeapon(X, Gun)$ and $HasMotive(X)$, then $Suspect(X)$.
+\end{itemize}
+\end{latin}
+
+
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+
+\section{سوال سوم}
+
+همانند سوال قبل می‌خواهیم با کمک استنتاج زنجیره‌ای روبه‌عقب 
+ Chaining) (Backward
+ مدلی برای حل پرونده طراحی کنیم. در اینجا نشان دهید که آیا Cagoni از زندان آزاد می‌شود یا خیر.
+
+\begin{latin}
+\emph{Rules}
+\begin{itemize}
+	\item \textbf{P1:} IF $(?x)$ is a businessman THEN $(?x)$ makes millions
+	\item \textbf{P2:} IF $(?x)$ is in the mob THEN $(?x)$ has low taxes
+	\item \textbf{P3:} IF (AND $(?x)$ has low taxes, $(?x)$ makes millions) THEN $(?x)$ embezzles money
+	\item \textbf{P4:} IF $(?x)$ embezzles money THEN $(?x)$ is a criminal
+	\item \textbf{P5:} IF (AND $(?x)$ knows $(?y)$, $(?x)$ makes millions, $(?y)$ is in the mob) THEN $(?x)$ has low taxes, $(?x)$ gets out of jail
+\end{itemize}
+\end{latin}
+
+\begin{latin}
+\emph{Facts}
+\begin{itemize}
+	\item \textbf{A1:} Gotti is in the mob
+	\item \textbf{A2:} Cagoni is a businessman
+	\item \textbf{A3:} Cagoni knows Gotti
+\end{itemize}
+\end{latin}
+
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\pagebreak
+
+\section{سوال چهارم}
+
+گزاره‌های زیر را به منطق مرتبه اول تبدیل کنید و سپس نتیجه را با کمک Resolution استنتاج کنید.
+
+\subsection*{الف) مسئله سگ و گربه}
+
+\subsubsection*{گزاره‌ها:}
+\begin{enumerate}
+	\item همه‌ی سگ‌های شکاری در شب زوزه می‌کشند. 
+	\item هر کسی که گربه داشته باشد، موش نخواهد داشت.
+	\item افراد کم‌خواب از هیچ موجودی که شب‌ها زوزه می‌کشد نگهداری نمی‌کنند.
+	\item جان یا یک گربه دارد یا یک سگ شکاری.
+	\item \textbf{(نتیجه)} اگر جان فردی کم‌خواب باشد، آنگاه جان هیچ موشی نخواهد داشت.
+\end{enumerate}
+
+\subsection*{ب) مسئله سانتا و کریسمس}
+
+\subsubsection*{گزاره‌ها:}
+\begin{enumerate}
+	\item هر کودکی هر کسی را که به او هدیه‌ای بدهد دوست دارد.
+	\item هر کودکی اگر سانتا بتواند در شب کریسمس سفر کند، از سانتا هدیه‌ای دریافت خواهد کرد.
+	\item در شب کریسمس هوا مه‌آلود است.
+	\item هر زمان که هوا مه‌آلود باشد، هر کسی می‌تواند سفر کند اگر منبع نوری داشته باشد.
+	\item هر گوزنی که بینی قرمز داشته باشد، یک منبع نور است.
+	\item \textbf{(نتیجه)} اگر سانتا گوزنی با بینی قرمز داشته باشد، آنگاه هر کودکی سانتا را دوست خواهد داشت.
+\end{enumerate}
+
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+
+\section{سوال پنجم}
+می‌توانید فرضیات زیر را درباره‌ی
+Chaining Forward
+   در نظر بگیرید:
+
+\begin{itemize}
+	\item فرض کنید
+	resolution conflict rule-ordering   
+	برقرار است.
+	\item assertions New 
+	به انتهای لیست
+	 assertions
+	  اضافه می‌شوند.
+	\item اگر یک 
+	rule
+	 بیش از یک بار با
+	  assertions 
+	 موجود
+	  match 
+	 شود، ترتیب 
+	 match
+	ها مطابق ترتیب بالا به پایین assertion ها در لیست در نظر گرفته می‌شود. بنابراین اگر یک 
+	rule مقدمه‌ای داشته باشد که هم با A1 و هم با A2 match شود، ابتدا match با A1 در نظر گرفته می‌شود.
+\end{itemize}
+
+chaining Forward 
+ را روی rules و assertions اجرا کنید. در دو iteration اول، دو ردیف اول جدول را پر کنید. برای ادامه فقط fired rules و new assertions کافی است.
+ 
+ 
+ \begin{latin}
+ 	\begin{center}
+ 		\begin{tabular}{|c|c|c|c|}
+ 			\hline
+ 			& \textbf{Matched} & \textbf{Fired} & \textbf{New Assertions Added to List of Assertions} \\
+ 			\hline
+ 			\textbf{1} & & & \\
+ 			\hline
+ 			\textbf{2} & & & \\
+ 			\hline
+ 			\textbf{3} & & & \\
+ 			\hline
+ 			\textbf{4} & & & \\
+ 			\hline
+ 			\textbf{5} & & & \\
+ 			\hline
+ 		\end{tabular}
+ 	\end{center}
+ \end{latin}
+
+به‌خاطر فشار خیلی زیادی که به جِی. کِی. رولینگ وارد شده، او تصمیم گرفته نسخهٔ هشتمی از هری پاتر بنویسد اما او فعلاً هیچ ایده‌ای ندارد؛ برای همین تصمیم گرفته از یک rule-based system کمک بگیرد تا بتواند خط داستانی کتاب Harry Potter and the Deadhorse Principle را جلو ببرد.  یک‌سری rules و assertions در اختیار شما قرار داده شده و از شما خواسته شده است که در شکل دادن بخش‌های مهم داستان کمکش کنید.
+
+\begin{latin}
+\emph{Rules}
+\begin{itemize}
+	\item \textbf{P0:} IF $(?x)$ is ambitious AND $(?x)$ is a squib THEN $(?x)$ has a bad term
+	
+	\item \textbf{P1:} IF $(?x)$ lives in Gryffindor Tower THEN $(?x)$ is a protagonist
+	
+	\item \textbf{P2:} IF $(?x)$ lives in Slytherin dungeon THEN $(?x)$ is a villain AND $(?x)$ is ambitious
+	
+	\item \textbf{P3:} IF (OR $(?x)$ is a protagonist, $(?x)$ is a villain) AND $(?x)$ is ambitious THEN $(?x)$ studies a lot
+	
+	\item \textbf{P4:} IF $(?x)$ studies a lot AND $(?x)$ is a protagonist THEN $(?x)$ becomes Hermione's friend
+	
+	\item \textbf{P5:} IF $(?x)$ snogs $(?y)$ AND $(?x)$ lives in Gryffindor Tower AND $(?y)$ lives in Slytherin dungeon THEN $(?x)$ has a bad term
+\end{itemize}
+\end{latin}
+
+\begin{latin}
+\emph{Initial Assertions}
+\begin{itemize}
+	\item \textbf{A0:} Millicent lives in Slytherin dungeon.
+	\item \textbf{A1:} Millicent is ambitious.
+	\item \textbf{A2:} Seamus lives in Gryffindor Tower.
+	\item \textbf{A3:} Seamus snogs Millicent.
+\end{itemize}
+\end{latin}
+
+
+\end{document}

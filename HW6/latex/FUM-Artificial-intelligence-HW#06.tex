@@ -1,0 +1,207 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{mathtools}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{xepersian}
+\usepackage{multirow}
+
+
+% ---------------------------
+%      Dark Theme Setup
+% ---------------------------
+\definecolor{CustomBackground}{HTML}{1C1C1C}  % Dark background
+\pagecolor{CustomBackground}
+\color{white}
+
+% ---------------------------
+%        Font Setup
+% ---------------------------
+\settextfont{Vazir.ttf}[
+    BoldFont = Vazir-Bold.ttf,
+    Path = fonts/
+]
+\setlatintextfont{Vazir.ttf}[
+    BoldFont = Vazir-Bold.ttf,
+    Path = fonts/
+]
+
+% ---------------------------
+%     Custom Adjustments
+% ---------------------------
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\thesection}{\arabic{section}}
+% User-defined commands for homework info (adjust as needed)
+\newcommand{\HomeworkNumber}{6}
+\newcommand{\HomeworkDeadline}{1404/09/08}
+\newcommand{\id}{\texttt{\detokenize{@HESAMODIN83}}}
+
+
+
+
+\begin{document}
+
+% ---------------------------------
+%           Front Page
+% ---------------------------------
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        % Bigger Logo
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\linewidth]{assets/fum-logo.png}
+    \label{fig:placeholder}
+\end{figure}
+        {\Huge \bfseries مبانی و کاربردهای هوش مصنوعی}\\[0.5cm]
+        {\Large دانشگاه فردوسی مشهد}\\[0.3cm]
+        {\Large گروه مهندسی کامپیوتر}\\[0.5cm]
+        {\normalsize دکتر هراتی}\\[2cm]
+
+        {\Huge \bfseries تمرین \HomeworkNumber}\\[0.5cm]
+        {\Large مهلت تحویل: \HomeworkDeadline}\\[2.5cm]
+
+        \Large مسئول تمرین: \id
+    \end{center}
+\end{titlepage}
+
+% ---------------------------------
+%          Instructions
+% ---------------------------------
+\clearpage
+\section*{دستورالعمل‌ها}
+
+دانشجویان محترم لطفا به موارد زیر توجه فرمایید:
+\begin{itemize}
+\itemsep0em
+\item
+	تحويل تمرين‌ها فقط از طريق سامانه  آموزش مجازی دانشگاه امکان‌‌پذیر است.
+\item 
+	تمرین‌ها باید دست نویس، خوانا و با استفاده از خودکار آبی یا مشکی و یا به صورت دیجیتالی با استفاده از قلم نوری نوشته شوند. 
+\item
+از تمرین های حل شده دیگران و هوش مصنوعی استفاده نکنید. پیامد های این کار با دانشجو می باشد.
+\item
+	نوشتن جواب آخر به تنهايى نمره‌ای نداشته و تمام مراحل حل، مشمول نمره می‌باشد.
+\item 
+	به دلیل موعد از پیش تعیین شده تمرین‌ها و برنامه درسی، امکان تمدید تمرین وجود ندارد. همچنین بدیهی است که ارسال تمرین پس از موعد تعیین شده نمره‌ای نخواهد داشت.
+	
+\item نحوه نام‌گذاری فایل پاسخ باید مطابق جدول ~\ref{tab:file_format}
+و به شکل pdf باشد.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Format} & \texttt{StudentID-Full\_Name-\#HwNo.pdf} \\
+		\hline
+		\textbf{Example} & \texttt{9876543210-Alan\_Turing-\#06.pdf} \\
+		\hline
+	\end{tabular}
+	\caption{شیوه نام‌گذاری فایل‌ها}
+	\label{tab:file_format}
+\end{table}
+    
+    
+\end{itemize}
+\rule{\linewidth}{0.4pt}
+
+
+%  هر سوال که گذاشته میشه، حما 3 خط آخر رو هم بعد از اتمام نوشتن سوال بگذارید.
+% \bigskip
+% \bigskip
+% \hline
+
+
+\section{سوال اول}
+
+هر یک از گزاره های زیر را اثبات کنید.
+\begin{latin} 
+\begin{enumerate}
+    \item $\alpha$ is valid if and only if $\text{True} \models \alpha$.
+    \item For any $\alpha$, $\text{False} \models \alpha$.
+    \item $\alpha \models \beta$ if and only if the sentence $(\alpha \Rightarrow \beta)$ is valid.
+    \item $\alpha \equiv \beta$ if and only if the sentence $(\alpha \Leftrightarrow \beta)$ is valid.
+    \item $\alpha \models \beta$ if and only if the sentence $(\alpha \wedge \neg \beta)$ is unsatisfiable.
+\end{enumerate}
+\end{latin}
+
+\rule{\linewidth}{0.4pt}
+
+\section{سوال دوم}
+الف.
+تمامی عبارات زیر را به یک فرم CNF تبدیل کنید.
+\begin{latin} 
+\begin{enumerate}
+    \item $A \Leftrightarrow (C \vee E)$
+    \item $E \Rightarrow D$
+    \item $B \wedge F \Rightarrow \neg C$
+    \item $E \Rightarrow C$
+    \item $C \Rightarrow F$
+    \item $C \Rightarrow B$
+\end{enumerate}
+\end{latin}
+ب.
+با استفاده از روش \textbf{resolution}، جمله
+\[
+\neg A \wedge \neg B
+\]
+را از صورت‌های حاصل از بخش الف اثبات کنید.
+ 
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سوال سوم}
+
+درستی یا نادرستی گزاره های زیر را اثبات کنید.\\
+(نکته : به فرم نرمال CNF تبدیل کنید)
+\begin{align*}
+\quad &(A \rightarrow B) \,\land\, (\neg A \rightarrow C) \,\land\, (B \lor C \rightarrow D) \models D \\[6pt]
+\quad &(A \lor B) \,\land\, (\neg A \lor C) \,\land\, (\neg B \lor D) \,\land\, (\neg C \lor G) \,\land\, (\neg D \lor G) \models G \\[6pt]
+\quad &A \,\land\, (A \rightarrow B) \,\land\, ((A \rightarrow B) \rightarrow (B \rightarrow C)) \models C \\[6pt]
+\quad &\neg A \,\land\, (A \rightarrow B) \models \neg B
+\end{align*}
+
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+\section{سوال چهارم}
+
+عبارات زیر را به گزاره‌های منطق مرتبهٔ اول تبدیل کنید.
+\begin{latin}
+\begin{enumerate}
+
+\item 
+There is a barber who shaves all and only those who do not shave themselves.\\
+\textbf{Predicates:} $Bx$: $x$ is a barber;\; $Sxy$: $x$ shaves $y$.
+
+\item 
+Unless there is a creator of everything, everything creates itself.\\
+\textbf{Predicate:} $Cxy$: $x$ creates $y$.
+
+\item 
+There are smart students and hard-working students.\\
+\textbf{Predicates:} $Sx$: $x$ is a student;\; $Mx$: $x$ is smart;\; $Hx$: $x$ is hard-working.
+
+\item 
+No less than three rabbits are in John’s garden.\\
+\textbf{Predicates:} $Rx$: $x$ is a rabbit;\; $Ixy$: $x$ is in $y$;\; $g$ = John’s garden.
+
+
+\end{enumerate}
+\end{latin}
+
+\bigskip
+\bigskip
+\rule{\linewidth}{0.4pt}
+
+% Add more sections as needed...
+
+\end{document}
